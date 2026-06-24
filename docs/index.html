@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Traffic Light System (STLS) – Embedded & Hardware Design</title>
-  <meta name="description" content="Modular smart traffic light control system with 4 distinct PCB designs. Embedded hardware for real-time traffic coordination, sensor integration, and power efficiency.">
+  <meta name="description" content="Modular smart traffic light control system with 7 distinct PCB designs. Embedded hardware for real-time traffic coordination, sensor integration, V2X wireless communication, and emergency priority override.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -105,7 +105,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
+      font-size: clamp(38px, 5.5vw, 64px);
       font-weight: 800;
       letter-spacing: -2px;
       line-height: 1.1;
@@ -122,9 +122,9 @@
     }
 
     .hero .subtitle {
-      font-size: clamp(16px, 2.3vw, 19px);
+      font-size: clamp(16px, 2.2vw, 19px);
       color: var(--text-dim);
-      max-width: 750px;
+      max-width: 800px;
       margin: 24px auto 40px;
       font-weight: 300;
       position: relative;
@@ -134,7 +134,7 @@
 
     .hero-stats {
       display: flex;
-      gap: 40px;
+      gap: 32px;
       flex-wrap: wrap;
       justify-content: center;
       position: relative;
@@ -144,6 +144,7 @@
 
     .stat {
       text-align: center;
+      min-width: 120px;
     }
 
     .stat-value {
@@ -235,7 +236,7 @@
     .pcb-viewers {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 48px;
     }
 
     .viewer-card {
@@ -427,7 +428,7 @@
       border: 1.5px solid rgba(16,185,129,0.3);
       border-radius: 12px;
       padding: 20px 28px;
-      min-width: 180px;
+      min-width: 160px;
       text-align: center;
       transition: all 0.3s ease;
     }
@@ -510,7 +511,7 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .hero-stats { gap: 24px; }
+      .hero-stats { gap: 20px; }
       .viewer-header { flex-direction: column; gap: 12px; align-items: flex-start; }
       .viewer-iframe-wrap { height: 400px; }
       .arch-flow { flex-direction: column; }
@@ -524,30 +525,31 @@
   <div class="hero">
     <div class="badge">
       <span class="dot"></span>
-      Smart City Hardware Design
+      Smart City Intersection Hardware
     </div>
     <h1>
       <span class="highlight">Smart Traffic Light</span><br>
-      Modular PCB System
+      Modular 7-Board System
     </h1>
     <p class="subtitle">
-      A robust, safety-critical 4-board intersection controller system. Industrial-grade design compliant with DFM/DFA/DFT guidelines, featuring real-time timing coordination, sensor acquisition, and optimized power delivery.
+      A comprehensive, safety-critical 7-board intelligent traffic control system. Industrial-grade design compliant with DFM/DFA/DFT guidelines, featuring real-time timing coordination, radar sensor gateway, emergency vehicle priority override, interactive pedestrian interface, and cloud synchronization.
     </p>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-value">4</div>
+        <div class="stat-value">7</div>
         <div class="stat-label">Unique PCBs</div>
       </div>
       <div class="stat">
         <div class="stat-value">DFM/DFA</div>
+        <div class="stat-label">Design Standard</div>
       </div>
       <div class="stat">
-        <div class="stat-value">24/7</div>
-        <div class="stat-label">Reliability</div>
+        <div class="stat-value">LoRa/4G</div>
+        <div class="stat-label">V2X Telecom</div>
       </div>
       <div class="stat">
-        <div class="stat-value">ESD/EMI</div>
-        <div class="stat-label">Protection</div>
+        <div class="stat-value">Failsafe</div>
+        <div class="stat-label">Hardware Watchdog</div>
       </div>
     </div>
     <a href="#pcb" class="scroll-cta">
@@ -559,7 +561,7 @@
   <!-- ===== PCB VIEWERS ===== -->
   <section id="pcb">
     <div class="section-header">
-      <span class="section-tag">Modular Hardware</span>
+      <span class="section-tag">Modular Hardware Suite</span>
       <h2>Interactive 3D PCBs & Schematics</h2>
       <p>Analyze schematics, 3D layouts, and copper layers directly in your browser. Allowed for public embedding via Altium 365.</p>
     </div>
@@ -640,8 +642,8 @@
           <div class="viewer-title">
             <div class="viewer-icon"><i data-lucide="rss"></i></div>
             <div>
-              <div class="viewer-name">STLS Sensor & Interface Node</div>
-              <div class="viewer-desc">Sensor Interface — Connects loop detectors, radar speed sensors, and pedestrian push-buttons</div>
+              <div class="viewer-name">STLS Sensor Interface Gateway</div>
+              <div class="viewer-desc">Sensor Interface — Connects loop detectors, radar speed sensors, and microwave detectors</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60" target="_blank" rel="noopener">
@@ -656,6 +658,76 @@
           </div>
         </div>
       </div>
+
+      <!-- Board 5 -->
+      <div class="viewer-card">
+        <div class="viewer-header">
+          <div class="viewer-title">
+            <div class="viewer-icon"><i data-lucide="user-check"></i></div>
+            <div>
+              <div class="viewer-name">STLS Pedestrian Console</div>
+              <div class="viewer-desc">User Interface — Pedestrian crossing button, OLED prompt, and acoustic feedback speaker</div>
+            </div>
+          </div>
+          <a class="viewer-link" href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank" rel="noopener">
+            Open in Altium 365 ↗
+          </a>
+        </div>
+        <div class="viewer-iframe-wrap">
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=3410839A-B567-4C9B-BBD0-DC1A358AC494&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Pedestrian Console - Altium 365 Viewer"></iframe>
+          <div class="fallback">
+            <p>⏳ Loading Altium 365 Viewer...</p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank">open directly →</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Board 6 -->
+      <div class="viewer-card">
+        <div class="viewer-header">
+          <div class="viewer-title">
+            <div class="viewer-icon"><i data-lucide="network"></i></div>
+            <div>
+              <div class="viewer-name">STLS Wireless V2X Gateway</div>
+              <div class="viewer-desc">Communication Node — High-speed LTE/4G and LoRa transceivers for cloud sync and vehicle integration</div>
+            </div>
+          </div>
+          <a class="viewer-link" href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank" rel="noopener">
+            Open in Altium 365 ↗
+          </a>
+        </div>
+        <div class="viewer-iframe-wrap">
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=26EAEF4B-C7EA-430A-A702-1F8874A07770&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS V2X Gateway - Altium 365 Viewer"></iframe>
+          <div class="fallback">
+            <p>⏳ Loading Altium 365 Viewer...</p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank">open directly →</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Board 7 -->
+      <div class="viewer-card">
+        <div class="viewer-header">
+          <div class="viewer-title">
+            <div class="viewer-icon"><i data-lucide="alert-triangle"></i></div>
+            <div>
+              <div class="viewer-name">STLS Emergency Override Receiver</div>
+              <div class="viewer-desc">Failsafe Module — Detects RF beacon overrides from approaching emergency vehicles (Ambulance/Police)</div>
+            </div>
+          </div>
+          <a class="viewer-link" href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank" rel="noopener">
+            Open in Altium 365 ↗
+          </a>
+        </div>
+        <div class="viewer-iframe-wrap">
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=112B2122-BF28-4B17-B8AC-0FC441B9653D&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Emergency Module - Altium 365 Viewer"></iframe>
+          <div class="fallback">
+            <p>⏳ Loading Altium 365 Viewer...</p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank">open directly →</a></p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -664,33 +736,52 @@
     <div class="section-header">
       <span class="section-tag">System Topology</span>
       <h2>Modular Integration Flow</h2>
-      <p>Decentralized architecture with isolated power and signal distribution</p>
+      <p>Distributed star architecture with a central master processor and dedicated bus modules</p>
     </div>
 
     <div class="arch-diagram">
       <div class="arch-flow">
         <div class="arch-node cyan">
           <div class="node-icon"><i data-lucide="zap"></i></div>
-          <div class="node-name">Power Board</div>
-          <div class="node-sub">AC-DC / Solar / UPS</div>
+          <div class="node-name">Power (UPS)</div>
+          <div class="node-sub">Mains & Solar</div>
         </div>
         <div class="arch-arrow">⟶</div>
         <div class="arch-node">
           <div class="node-icon"><i data-lucide="cpu"></i></div>
           <div class="node-name">Master CPU</div>
-          <div class="node-sub">Logic & Safety Controller</div>
+          <div class="node-sub">Logic & Safety</div>
         </div>
         <div class="arch-arrow">⟶</div>
         <div class="arch-node cyan">
+          <div class="node-icon"><i data-lucide="network"></i></div>
+          <div class="node-name">V2X Gateway</div>
+          <div class="node-sub">LTE / LoRa Sync</div>
+        </div>
+        <div class="arch-arrow">⟶</div>
+        <div class="arch-node">
+          <div class="node-icon"><i data-lucide="alert-triangle"></i></div>
+          <div class="node-name">RF Priority</div>
+          <div class="node-sub">Emergency Beacon</div>
+        </div>
+      </div>
+      <div class="arch-flow" style="margin-top: 16px;">
+        <div class="arch-node">
+          <div class="node-icon"><i data-lucide="user-check"></i></div>
+          <div class="node-name">Pedestrian Console</div>
+          <div class="node-sub">OLED & Sound</div>
+        </div>
+        <div class="arch-arrow">⟵</div>
+        <div class="arch-node cyan">
           <div class="node-icon"><i data-lucide="rss"></i></div>
           <div class="node-name">Sensor Node</div>
-          <div class="node-sub">Radar & Loop Sensors</div>
+          <div class="node-sub">Loop & Radar</div>
         </div>
         <div class="arch-arrow">⟶</div>
         <div class="arch-node">
           <div class="node-icon"><i data-lucide="sliders"></i></div>
           <div class="node-name">Driver Board</div>
-          <div class="node-sub">LED Signals</div>
+          <div class="node-sub">High-Power LEDs</div>
         </div>
       </div>
     </div>

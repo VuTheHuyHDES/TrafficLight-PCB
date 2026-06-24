@@ -4,7 +4,7 @@
 [![Altium 365](https://img.shields.io/badge/Altium%20365-Interactive%203D-blue?style=for-the-badge&logo=altium)](https://365.altium.com/)
 [![Embedded System](https://img.shields.io/badge/Hardware-Modular-cyan?style=for-the-badge&logo=microchip)](https://365.altium.com/)
 
-Dự án thiết kế phần cứng cho **Hệ thống Đèn giao thông thông minh (Smart Traffic Light System - STLS)** phục vụ điều phối giao thông đô thị thời gian thực. Hệ thống được thiết kế theo cấu trúc modular gồm 4 bo mạch PCB riêng biệt, tối ưu hóa theo các tiêu chuẩn công nghiệp (DFM/DFA/DFT).
+Dự án thiết kế phần cứng cho **Hệ thống Đèn giao thông thông minh (Smart Traffic Light System - STLS)** phục vụ điều phối giao thông đô thị thời gian thực. Hệ thống được thiết kế theo cấu trúc modular gồm 7 bo mạch PCB riêng biệt, tối ưu hóa theo các tiêu chuẩn công nghiệp (DFM/DFA/DFT).
 
 ---
 
@@ -22,9 +22,21 @@ Dự án thiết kế phần cứng cho **Hệ thống Đèn giao thông thông 
 *   **Chức năng**: Sử dụng các IC điều khiển dòng không đổi (Constant Current LED Driver) để đảm bảo độ sáng đồng đều của hệ thống đèn LED Đỏ-Vàng-Xanh công suất lớn.
 *   **Xem mạch 3D**: [Altium 365 Viewer - Light Driver Board](https://365.altium.com/files/5CA444A1-6D06-4D42-AD1B-D9A25DB2741F)
 
-### 4. STLS Sensor & Interface Node (Bo mạch giao tiếp cảm biến)
-*   **Chức năng**: Giao tiếp cảm biến vòng từ dò xe (loop detector), cảm biến radar đo tốc độ, và nút bấm ưu tiên cho người đi bộ.
+### 4. STLS Sensor Interface Gateway (Bo mạch giao tiếp cảm biến)
+*   **Chức năng**: Giao tiếp cảm biến vòng từ dò xe (loop detector), cảm biến radar đo tốc độ, và cảm biến microwave phát hiện vật cản.
 *   **Xem mạch 3D**: [Altium 365 Viewer - Sensor Node](https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60)
+
+### 5. STLS Pedestrian Console (Giao diện người đi bộ qua đường)
+*   **Chức năng**: Nút bấm yêu cầu qua đường của người đi bộ tích hợp màn hình hiển thị OLED, còi cảnh báo và âm thanh hướng dẫn.
+*   **Xem mạch 3D**: [Altium 365 Viewer - Pedestrian Console](https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494)
+
+### 6. STLS Wireless V2X Gateway (Bo mạch giao tiếp không dây V2X)
+*   **Chức năng**: Bo mạch tích hợp module 4G/LTE và LoRa WAN truyền dữ liệu về Cloud thông minh của thành phố và đồng bộ hóa pha đèn.
+*   **Xem mạch 3D**: [Altium 365 Viewer - V2X Gateway](https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770)
+
+### 7. STLS Emergency Override Module (Bộ nhận tín hiệu ưu tiên khẩn cấp)
+*   **Chức năng**: Nhận tín hiệu sóng radio (RF) phát ra từ xe ưu tiên (Cứu thương, Cảnh sát, Cứu hỏa) để tự động chuyển toàn bộ pha đèn sang màu xanh giải phóng ngã tư.
+*   **Xem mạch 3D**: [Altium 365 Viewer - Emergency Module](https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D)
 
 ---
 
@@ -37,7 +49,7 @@ Dự án thiết kế phần cứng cho **Hệ thống Đèn giao thông thông 
 
 ## 🖥️ Xem Portfolio PCB tương tác
 
-Trang web GitHub Pages đã tích hợp trực quan cả 4 bo mạch dưới dạng 3D xoay lật trực tuyến:
+Trang web GitHub Pages đã tích hợp trực quan cả 7 bo mạch dưới dạng 3D xoay lật trực tuyến:
 👉 **[https://VuTheHuyHDES.github.io/TrafficLight-PCB/](https://VuTheHuyHDES.github.io/TrafficLight-PCB/)**
 
 ---
