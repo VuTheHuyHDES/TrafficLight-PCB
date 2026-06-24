@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Traffic Light System (STLS) – Embedded & Hardware Design</title>
-  <meta name="description" content="Modular smart traffic light control system with 7 distinct PCB designs. Embedded hardware for real-time traffic coordination, sensor integration, V2X wireless communication, and emergency priority override.">
+  <title>Traffic Light & LED PCB Portfolio</title>
+  <meta name="description" content="Bộ sưu tập thiết kế bo mạch đèn giao thông, đèn LED định hình tròn, vuông, hình mũi tên và mạch hiển thị LED 7 đoạn.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,8 +19,6 @@
       --green: #10b981;
       --green-glow: rgba(16, 185, 129, 0.15);
       --cyan: #06b6d4;
-      --yellow: #f59e0b;
-      --red: #ef4444;
       --text: #f1f5f9;
       --text-dim: #cbd5e1;
       --text-muted: #64748b;
@@ -60,18 +58,6 @@
       background:
         radial-gradient(ellipse 600px 400px at 50% 30%, rgba(16,185,129,0.08), transparent),
         radial-gradient(ellipse 400px 300px at 80% 70%, rgba(6,182,212,0.05), transparent);
-      pointer-events: none;
-    }
-
-    /* Grid pattern */
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(16,185,129,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16,185,129,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
       pointer-events: none;
     }
 
@@ -347,145 +333,6 @@
       text-decoration: underline;
     }
 
-    /* ===== TECH SPECS ===== */
-    .specs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .spec-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      transition: all 0.3s ease;
-    }
-
-    .spec-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px var(--green-glow);
-    }
-
-    .spec-card .icon {
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      color: var(--green);
-    }
-
-    .spec-card .icon svg {
-      width: 28px;
-      height: 28px;
-      stroke-width: 1.75px;
-    }
-
-    .spec-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .spec-card p {
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.7;
-    }
-
-    .spec-card .tech-tag {
-      display: inline-block;
-      background: rgba(16,185,129,0.1);
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 10px;
-      border-radius: 100px;
-      margin-top: 12px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* ===== ARCHITECTURE ===== */
-    .arch-diagram {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .arch-flow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .arch-node {
-      background: rgba(16,185,129,0.05);
-      border: 1.5px solid rgba(16,185,129,0.3);
-      border-radius: 12px;
-      padding: 20px 28px;
-      min-width: 160px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .arch-node:hover {
-      border-color: var(--green);
-      box-shadow: 0 0 20px var(--green-glow);
-    }
-
-    .arch-node.cyan {
-      border-color: rgba(6,182,212,0.3);
-      background: rgba(6,182,212,0.05);
-    }
-
-    .arch-node.cyan:hover {
-      border-color: var(--cyan);
-      box-shadow: 0 0 20px rgba(6,182,212,0.15);
-    }
-
-    .arch-node .node-icon {
-      margin-bottom: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--green);
-    }
-
-    .arch-node .node-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke-width: 2px;
-    }
-
-    .arch-node.cyan .node-icon {
-      color: var(--cyan);
-    }
-
-    .arch-node .node-name { font-size: 15px; font-weight: 600; }
-    .arch-node .node-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 4px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .arch-arrow {
-      color: var(--green);
-      font-size: 28px;
-      opacity: 0.5;
-      animation: arrowPulse 1.5s infinite;
-    }
-
-    @keyframes arrowPulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.8; }
-    }
-
     /* ===== FOOTER ===== */
     footer {
       border-top: 1px solid var(--border);
@@ -514,8 +361,6 @@
       .hero-stats { gap: 20px; }
       .viewer-header { flex-direction: column; gap: 12px; align-items: flex-start; }
       .viewer-iframe-wrap { height: 400px; }
-      .arch-flow { flex-direction: column; }
-      .arch-arrow { transform: rotate(90deg); }
     }
   </style>
 </head>
@@ -525,35 +370,35 @@
   <div class="hero">
     <div class="badge">
       <span class="dot"></span>
-      Smart City Intersection Hardware
+      Altium PCB Designs Portfolio
     </div>
     <h1>
-      <span class="highlight">Smart Traffic Light</span><br>
-      Modular 7-Board System
+      <span class="highlight">Đèn Giao Thông</span><br>
+      & Bo Mạch Định Hình
     </h1>
     <p class="subtitle">
-      A comprehensive, safety-critical 7-board intelligent traffic control system. Industrial-grade design compliant with DFM/DFA/DFT guidelines, featuring real-time timing coordination, radar sensor gateway, emergency vehicle priority override, interactive pedestrian interface, and cloud synchronization.
+      Bộ sưu tập các thiết kế bo mạch đèn LED chỉ hướng hình mũi tên, đèn LED hình tròn, hình vuông và mạch hiển thị đếm số sử dụng LED 7 đoạn (88).
     </p>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-value">7</div>
-        <div class="stat-label">Unique PCBs</div>
+        <div class="stat-label">Bo mạch PCB</div>
       </div>
       <div class="stat">
-        <div class="stat-value">DFM/DFA</div>
-        <div class="stat-label">Design Standard</div>
+        <div class="stat-value">Altium</div>
+        <div class="stat-label">Designer</div>
       </div>
       <div class="stat">
-        <div class="stat-value">LoRa/4G</div>
-        <div class="stat-label">V2X Telecom</div>
+        <div class="stat-value">LED</div>
+        <div class="stat-label">Định hình</div>
       </div>
       <div class="stat">
-        <div class="stat-value">Failsafe</div>
-        <div class="stat-label">Hardware Watchdog</div>
+        <div class="stat-value">7 Seg</div>
+        <div class="stat-label">Đếm số (88)</div>
       </div>
     </div>
     <a href="#pcb" class="scroll-cta">
-      <span>Explore PCBs</span>
+      <span>Xem các mạch PCB</span>
       <div class="arrow"></div>
     </a>
   </div>
@@ -561,9 +406,9 @@
   <!-- ===== PCB VIEWERS ===== -->
   <section id="pcb">
     <div class="section-header">
-      <span class="section-tag">Modular Hardware Suite</span>
-      <h2>Interactive 3D PCBs & Schematics</h2>
-      <p>Analyze schematics, 3D layouts, and copper layers directly in your browser. Allowed for public embedding via Altium 365.</p>
+      <span class="section-tag">PCB Showcase</span>
+      <h2>Xem PCB 3D tương tác</h2>
+      <p>Click và rê chuột để xoay lật 3D hoặc chuyển sang tab Schematic để xem nguyên lý mạch trực tiếp.</p>
     </div>
 
     <div class="pcb-viewers">
@@ -571,21 +416,21 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="cpu"></i></div>
+            <div class="viewer-icon"><i data-lucide="binary"></i></div>
             <div>
-              <div class="viewer-name">STLS Master Controller</div>
-              <div class="viewer-desc">System CPU — Coordinates intersection schedules, wireless overrides, and failsafe modes</div>
+              <div class="viewer-name">Mạch hiển thị LED 7 đoạn (Đếm số 88)</div>
+              <div class="viewer-desc">Bo mạch đếm số sử dụng LED 7 đoạn hiển thị số giây / thời gian</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/653198E5-79FD-4426-84B0-B41E053BF8AF" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=653198E5-79FD-4426-84B0-B41E053BF8AF&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Master Controller - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=653198E5-79FD-4426-84B0-B41E053BF8AF&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED 7 đoạn đếm số - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/653198E5-79FD-4426-84B0-B41E053BF8AF" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/653198E5-79FD-4426-84B0-B41E053BF8AF" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
@@ -594,21 +439,21 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="zap"></i></div>
+            <div class="viewer-icon"><i data-lucide="circle"></i></div>
             <div>
-              <div class="viewer-name">STLS Power Distribution & Charging</div>
-              <div class="viewer-desc">Power Management — Houses regulators, surge arrestors, and UPS solar backup charger circuits</div>
+              <div class="viewer-name">Bo mạch LED hình tròn</div>
+              <div class="viewer-desc">Thiết kế bảng đèn LED định dạng hình tròn</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/1436E06B-F6CC-4C17-849A-14EEDF96343A" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=1436E06B-F6CC-4C17-849A-14EEDF96343A&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Power Board - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=1436E06B-F6CC-4C17-849A-14EEDF96343A&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED tròn - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/1436E06B-F6CC-4C17-849A-14EEDF96343A" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/1436E06B-F6CC-4C17-849A-14EEDF96343A" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
@@ -617,21 +462,21 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="sliders"></i></div>
+            <div class="viewer-icon"><i data-lucide="square"></i></div>
             <div>
-              <div class="viewer-name">STLS Light Driver Board</div>
-              <div class="viewer-desc">Display Driver — High-efficiency constant current LED drivers for signaling lights</div>
+              <div class="viewer-name">Bo mạch LED hình vuông</div>
+              <div class="viewer-desc">Thiết kế bảng đèn LED định dạng hình vuông</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/5CA444A1-6D06-4D42-AD1B-D9A25DB2741F" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=5CA444A1-6D06-4D42-AD1B-D9A25DB2741F&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Light Driver - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=5CA444A1-6D06-4D42-AD1B-D9A25DB2741F&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED vuông - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/5CA444A1-6D06-4D42-AD1B-D9A25DB2741F" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/5CA444A1-6D06-4D42-AD1B-D9A25DB2741F" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
@@ -640,21 +485,21 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="rss"></i></div>
+            <div class="viewer-icon"><i data-lucide="arrow-up-right"></i></div>
             <div>
-              <div class="viewer-name">STLS Sensor Interface Gateway</div>
-              <div class="viewer-desc">Sensor Interface — Connects loop detectors, radar speed sensors, and microwave detectors</div>
+              <div class="viewer-name">Bo mạch LED hình mũi tên chỉ hướng (Mẫu 1)</div>
+              <div class="viewer-desc">Bảng mạch LED định hình dạng mũi tên chỉ đường</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=C8D35E16-98AD-496C-89E0-EC4160A98B60&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Sensor Node - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=C8D35E16-98AD-496C-89E0-EC4160A98B60&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED mũi tên 1 - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
@@ -663,21 +508,21 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="user-check"></i></div>
+            <div class="viewer-icon"><i data-lucide="arrow-up-right"></i></div>
             <div>
-              <div class="viewer-name">STLS Pedestrian Console</div>
-              <div class="viewer-desc">User Interface — Pedestrian crossing button, OLED prompt, and acoustic feedback speaker</div>
+              <div class="viewer-name">Bo mạch LED hình mũi tên chỉ hướng (Mẫu 2)</div>
+              <div class="viewer-desc">Bảng mạch LED định hình dạng mũi tên chỉ đường</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=3410839A-B567-4C9B-BBD0-DC1A358AC494&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Pedestrian Console - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=3410839A-B567-4C9B-BBD0-DC1A358AC494&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED mũi tên 2 - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
@@ -686,21 +531,21 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="network"></i></div>
+            <div class="viewer-icon"><i data-lucide="layout"></i></div>
             <div>
-              <div class="viewer-name">STLS Wireless V2X Gateway</div>
-              <div class="viewer-desc">Communication Node — High-speed LTE/4G and LoRa transceivers for cloud sync and vehicle integration</div>
+              <div class="viewer-name">Bo mạch LED định hình (Mẫu 1)</div>
+              <div class="viewer-desc">Bảng mạch LED hình học tùy chỉnh</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=26EAEF4B-C7EA-430A-A702-1F8874A07770&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS V2X Gateway - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=26EAEF4B-C7EA-430A-A702-1F8874A07770&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED định hình 1 - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
@@ -709,135 +554,32 @@
       <div class="viewer-card">
         <div class="viewer-header">
           <div class="viewer-title">
-            <div class="viewer-icon"><i data-lucide="alert-triangle"></i></div>
+            <div class="viewer-icon"><i data-lucide="layout"></i></div>
             <div>
-              <div class="viewer-name">STLS Emergency Override Receiver</div>
-              <div class="viewer-desc">Failsafe Module — Detects RF beacon overrides from approaching emergency vehicles (Ambulance/Police)</div>
+              <div class="viewer-name">Bo mạch LED định hình (Mẫu 2)</div>
+              <div class="viewer-desc">Bảng mạch LED hình học tùy chỉnh</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank" rel="noopener">
-            Open in Altium 365 ↗
+            Mở trên Altium 365 ↗
           </a>
         </div>
         <div class="viewer-iframe-wrap">
-          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=112B2122-BF28-4B17-B8AC-0FC441B9653D&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="STLS Emergency Module - Altium 365 Viewer"></iframe>
+          <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=112B2122-BF28-4B17-B8AC-0FC441B9653D&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED định hình 2 - Altium 365 Viewer"></iframe>
           <div class="fallback">
-            <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>If it doesn't load, <a href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank">open directly →</a></p>
+            <p>⏳ Đang tải Altium 365 Viewer...</p>
+            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank">mở trực tiếp →</a></p>
           </div>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ===== ARCHITECTURE ===== -->
-  <section>
-    <div class="section-header">
-      <span class="section-tag">System Topology</span>
-      <h2>Modular Integration Flow</h2>
-      <p>Distributed star architecture with a central master processor and dedicated bus modules</p>
-    </div>
-
-    <div class="arch-diagram">
-      <div class="arch-flow">
-        <div class="arch-node cyan">
-          <div class="node-icon"><i data-lucide="zap"></i></div>
-          <div class="node-name">Power (UPS)</div>
-          <div class="node-sub">Mains & Solar</div>
-        </div>
-        <div class="arch-arrow">⟶</div>
-        <div class="arch-node">
-          <div class="node-icon"><i data-lucide="cpu"></i></div>
-          <div class="node-name">Master CPU</div>
-          <div class="node-sub">Logic & Safety</div>
-        </div>
-        <div class="arch-arrow">⟶</div>
-        <div class="arch-node cyan">
-          <div class="node-icon"><i data-lucide="network"></i></div>
-          <div class="node-name">V2X Gateway</div>
-          <div class="node-sub">LTE / LoRa Sync</div>
-        </div>
-        <div class="arch-arrow">⟶</div>
-        <div class="arch-node">
-          <div class="node-icon"><i data-lucide="alert-triangle"></i></div>
-          <div class="node-name">RF Priority</div>
-          <div class="node-sub">Emergency Beacon</div>
-        </div>
-      </div>
-      <div class="arch-flow" style="margin-top: 16px;">
-        <div class="arch-node">
-          <div class="node-icon"><i data-lucide="user-check"></i></div>
-          <div class="node-name">Pedestrian Console</div>
-          <div class="node-sub">OLED & Sound</div>
-        </div>
-        <div class="arch-arrow">⟵</div>
-        <div class="arch-node cyan">
-          <div class="node-icon"><i data-lucide="rss"></i></div>
-          <div class="node-name">Sensor Node</div>
-          <div class="node-sub">Loop & Radar</div>
-        </div>
-        <div class="arch-arrow">⟶</div>
-        <div class="arch-node">
-          <div class="node-icon"><i data-lucide="sliders"></i></div>
-          <div class="node-name">Driver Board</div>
-          <div class="node-sub">High-Power LEDs</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SPECS ===== -->
-  <section>
-    <div class="section-header">
-      <span class="section-tag">DFM / DFA / DFT Guidelines</span>
-      <h2>Key Design Highlights</h2>
-    </div>
-
-    <div class="specs-grid">
-      <div class="spec-card">
-        <div class="icon"><i data-lucide="shield"></i></div>
-        <h3>ESD & Surge Protection</h3>
-        <p>TVS diodes on all external sensor/communication lines. Spark gaps and MOV components on mains supply inputs. ESD protection up to 15kV.</p>
-        <span class="tech-tag">IEC 61000-4-2</span>
-      </div>
-      <div class="spec-card">
-        <div class="icon"><i data-lucide="zap"></i></div>
-        <h3>High Efficiency Power</h3>
-        <p>Synchronous buck regulators (efficiency &gt; 92%) on Master and Driver boards. Minimal thermal footprint under continuous 24/7 operating conditions.</p>
-        <span class="tech-tag">DCDC Switching</span>
-      </div>
-      <div class="spec-card">
-        <div class="icon"><i data-lucide="activity"></i></div>
-        <h3>Design for Assembly (DFA)</h3>
-        <p>Single-sided component placement on all peripheral boards to minimize stencil costs. Common footprint sizing (0805, SOIC, QFN) for optimized pick-and-place.</p>
-        <span class="tech-tag">IPC-7351</span>
-      </div>
-      <div class="spec-card">
-        <div class="icon"><i data-lucide="check-square"></i></div>
-        <h3>Design for Testability (DFT)</h3>
-        <p>Dedicated copper test points on all critical power rails, clock signals, and UART channels. Sized and spaced for mechanical JIG bed-of-nails testing.</p>
-        <span class="tech-tag">JIG Test Points</span>
-      </div>
-      <div class="spec-card">
-        <div class="icon"><i data-lucide="circuit-board"></i></div>
-        <h3>Signal Integrity (SI)</h3>
-        <p>Differential pairs routed with controlled 90-ohm impedance for communication channels. Ground guard rings surrounding critical oscillator traces.</p>
-        <span class="tech-tag">Controlled Zo</span>
-      </div>
-      <div class="spec-card">
-        <div class="icon"><i data-lucide="thermometer"></i></div>
-        <h3>Thermal Management</h3>
-        <p>Via farms and exposed copper pads under switching regulators and LED drivers. Optimized thermal paths keeping components under 55°C at peak loads.</p>
-        <span class="tech-tag">ΔT &lt; 15°C</span>
-      </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="author">Vũ Thế Huy — KTĐT&THCN 1, Khóa 62</div>
-    <p>Graduation Project Portfolio: Thiết kế phần cứng Hệ thống Đèn giao thông thông minh (STLS)</p>
+    <p>Graduation Project Portfolio: Thiết kế bo mạch đèn giao thông & Đèn LED định hình</p>
     <p style="margin-top: 8px;">
       <a href="https://github.com/VuTheHuyHDES" target="_blank">GitHub</a> · 
       <a href="mailto:vuthehuy1@gmail.com">Email</a>
