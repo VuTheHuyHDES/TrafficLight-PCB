@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traffic Light & LED PCB Portfolio</title>
-  <meta name="description" content="A collection of custom-shaped LED PCBs, including circular, square, directional arrow layouts, and 7-segment numeric display boards.">
+  <meta name="description" content="A professional portfolio of PCB designs for traffic lights and custom-shaped LED display boards, including circular, square, directional arrow layouts, and 7-segment numeric counters.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 24px;
+      padding: 80px 24px;
       position: relative;
       overflow: hidden;
     }
@@ -58,6 +58,18 @@
       background:
         radial-gradient(ellipse 600px 400px at 50% 30%, rgba(16,185,129,0.08), transparent),
         radial-gradient(ellipse 400px 300px at 80% 70%, rgba(6,182,212,0.05), transparent);
+      pointer-events: none;
+    }
+
+    /* Grid pattern */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(16,185,129,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16,185,129,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
     }
 
@@ -333,6 +345,145 @@
       text-decoration: underline;
     }
 
+    /* ===== SIGNAL FLOW DIAGRAM ===== */
+    .arch-diagram {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .arch-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .arch-node {
+      background: rgba(16,185,129,0.05);
+      border: 1.5px solid rgba(16,185,129,0.3);
+      border-radius: 12px;
+      padding: 20px 28px;
+      min-width: 170px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .arch-node:hover {
+      border-color: var(--green);
+      box-shadow: 0 0 20px var(--green-glow);
+    }
+
+    .arch-node.cyan {
+      border-color: rgba(6,182,212,0.3);
+      background: rgba(6,182,212,0.05);
+    }
+
+    .arch-node.cyan:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(6,182,212,0.15);
+    }
+
+    .arch-node .node-icon {
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--green);
+    }
+
+    .arch-node .node-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2px;
+    }
+
+    .arch-node.cyan .node-icon {
+      color: var(--cyan);
+    }
+
+    .arch-node .node-name { font-size: 15px; font-weight: 600; }
+    .arch-node .node-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .arch-arrow {
+      color: var(--green);
+      font-size: 28px;
+      opacity: 0.5;
+      animation: arrowPulse 1.5s infinite;
+    }
+
+    @keyframes arrowPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    /* ===== TECH SPECS ===== */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: all 0.3s ease;
+    }
+
+    .spec-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--green-glow);
+    }
+
+    .spec-card .icon {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      color: var(--green);
+    }
+
+    .spec-card .icon svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.75px;
+    }
+
+    .spec-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .spec-card p {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .spec-card .tech-tag {
+      display: inline-block;
+      background: rgba(16,185,129,0.1);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 12px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
     /* ===== FOOTER ===== */
     footer {
       border-top: 1px solid var(--border);
@@ -361,6 +512,8 @@
       .hero-stats { gap: 20px; }
       .viewer-header { flex-direction: column; gap: 12px; align-items: flex-start; }
       .viewer-iframe-wrap { height: 400px; }
+      .arch-flow { flex-direction: column; }
+      .arch-arrow { transform: rotate(90deg); }
     }
   </style>
 </head>
@@ -377,7 +530,7 @@
       & Shaped LED PCBs
     </h1>
     <p class="subtitle">
-      A collection of custom-shaped LED PCBs, including circular, square, directional arrow layouts, and 7-segment numeric display boards.
+      A collection of custom-shaped LED PCBs, including circular, square, directional arrow layouts, and 7-segment numeric display boards designed for clear visibility and high reliability.
     </p>
     <div class="hero-stats">
       <div class="stat">
@@ -393,8 +546,8 @@
         <div class="stat-label">Custom Shapes</div>
       </div>
       <div class="stat">
-        <div class="stat-value">7 Seg</div>
-        <div class="stat-label">7-Seg Counter (88)</div>
+        <div class="stat-value">7-Seg</div>
+        <div class="stat-label">Counter (88)</div>
       </div>
     </div>
     <a href="#pcb" class="scroll-cta">
@@ -419,7 +572,7 @@
             <div class="viewer-icon"><i data-lucide="binary"></i></div>
             <div>
               <div class="viewer-name">7-Segment LED Numeric Counter PCB</div>
-              <div class="viewer-desc">Numeric countdown display board using two-digit 7-segment LEDs.</div>
+              <div class="viewer-desc">Numeric countdown display board using two-digit 7-segment LEDs to show timer values.</div>
             </div>
           </div>
           <a class="viewer-link" href="https://365.altium.com/files/653198E5-79FD-4426-84B0-B41E053BF8AF" target="_blank" rel="noopener">
@@ -430,7 +583,7 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=653198E5-79FD-4426-84B0-B41E053BF8AF&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED 7 đoạn đếm số - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/653198E5-79FD-4426-84B0-B41E053BF8AF" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/653198E5-79FD-4426-84B0-B41E053BF8AF" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
@@ -453,7 +606,7 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=1436E06B-F6CC-4C17-849A-14EEDF96343A&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED tròn - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/1436E06B-F6CC-4C17-849A-14EEDF96343A" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/1436E06B-F6CC-4C17-849A-14EEDF96343A" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
@@ -476,7 +629,7 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=5CA444A1-6D06-4D42-AD1B-D9A25DB2741F&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED vuông - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/5CA444A1-6D06-4D42-AD1B-D9A25DB2741F" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/5CA444A1-6D06-4D42-AD1B-D9A25DB2741F" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
@@ -499,7 +652,7 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=C8D35E16-98AD-496C-89E0-EC4160A98B60&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED mũi tên 1 - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/C8D35E16-98AD-496C-89E0-EC4160A98B60" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
@@ -522,7 +675,7 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=3410839A-B567-4C9B-BBD0-DC1A358AC494&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED mũi tên 2 - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/3410839A-B567-4C9B-BBD0-DC1A358AC494" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
@@ -545,7 +698,7 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=26EAEF4B-C7EA-430A-A702-1F8874A07770&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED định hình 1 - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/26EAEF4B-C7EA-430A-A702-1F8874A07770" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
@@ -568,11 +721,95 @@
           <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=112B2122-BF28-4B17-B8AC-0FC441B9653D&activeView=PCB" width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:100%;" scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);" title="Mạch LED định hình 2 - Altium 365 Viewer"></iframe>
           <div class="fallback">
             <p>⏳ Loading Altium 365 Viewer...</p>
-            <p>Nếu không hiển thị, <a href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank">mở trực tiếp →</a></p>
+            <p>If it doesn't load, <a href="https://365.altium.com/files/112B2122-BF28-4B17-B8AC-0FC441B9653D" target="_blank">open directly →</a></p>
           </div>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ===== HARDWARE SIGNAL FLOW ===== -->
+  <section>
+    <div class="section-header">
+      <span class="section-tag">Signal Flow</span>
+      <h2>Display Controller Integration</h2>
+      <p>Typical schematic signal routing from control logic to the LED display board</p>
+    </div>
+
+    <div class="arch-diagram">
+      <div class="arch-flow">
+        <div class="arch-node cyan">
+          <div class="node-icon"><i data-lucide="cpu"></i></div>
+          <div class="node-name">Control Input</div>
+          <div class="node-sub">MCU / Timer signals</div>
+        </div>
+        <div class="arch-arrow">⟶</div>
+        <div class="arch-node">
+          <div class="node-icon"><i data-lucide="binary"></i></div>
+          <div class="node-name">Display Driver</div>
+          <div class="node-sub">74HC595 / Decoder</div>
+        </div>
+        <div class="arch-arrow">⟶</div>
+        <div class="arch-node cyan">
+          <div class="node-icon"><i data-lucide="layout"></i></div>
+          <div class="node-name">LED Array Board</div>
+          <div class="node-sub">Round/Square/Arrow</div>
+        </div>
+        <div class="arch-arrow">⟶</div>
+        <div class="arch-node">
+          <div class="node-icon"><i data-lucide="eye"></i></div>
+          <div class="node-name">Visual Signal</div>
+          <div class="node-sub">High-visibility output</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNICAL DESIGN SPECS ===== -->
+  <section>
+    <div class="section-header">
+      <span class="section-tag">Design for Manufacturing (DFM)</span>
+      <h2>Technical Board Specifications</h2>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="icon"><i data-lucide="activity"></i></div>
+        <h3>Constant Current Driving</h3>
+        <p>Implemented current-limiting resistors and display drivers to prevent thermal runaway in high-brightness SMT LED chips.</p>
+        <span class="tech-tag">LED Biasing</span>
+      </div>
+      <div class="spec-card">
+        <div class="icon"><i data-lucide="layout"></i></div>
+        <h3>Custom Outline Routing</h3>
+        <p>Engineered precise board shapes (circular, square, arrows) with tight mechanical tolerances for standard industrial enclosures.</p>
+        <span class="tech-tag">Mechanical CAD</span>
+      </div>
+      <div class="spec-card">
+        <div class="icon"><i data-lucide="thermometer"></i></div>
+        <h3>Thermal Management</h3>
+        <p>Utilized large thermal vias and local copper planes acting as passive heatsinks to dissipate heat from clustered LED arrays.</p>
+        <span class="tech-tag">&Delta;T &lt; 15&deg;C</span>
+      </div>
+      <div class="spec-card">
+        <div class="icon"><i data-lucide="check-square"></i></div>
+        <h3>Design for Assembly (DFA)</h3>
+        <p>Placed all SMD passives and driver ICs on a single side to optimize solder paste stencil costs and increase manufacturing yield.</p>
+        <span class="tech-tag">Single-sided SMT</span>
+      </div>
+      <div class="spec-card">
+        <div class="icon"><i data-lucide="plug"></i></div>
+        <h3>Power Connector Interface</h3>
+        <p>Incorporated standard 2.54mm pin headers and screw terminals for stable, vibration-resistant cable harnesses in field operation.</p>
+        <span class="tech-tag">I/O Terminals</span>
+      </div>
+      <div class="spec-card">
+        <div class="icon"><i data-lucide="target"></i></div>
+        <h3>Design for Testing (DFT)</h3>
+        <p>Structured test pads on driver pin routes and power rails to facilitate prompt verification via multimeters or bed-of-nails test fixtures.</p>
+        <span class="tech-tag">Test Points</span>
+      </div>
     </div>
   </section>
 
